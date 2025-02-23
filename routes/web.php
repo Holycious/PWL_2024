@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/greeting', [WelcomeController::class, 
+'greeting']);
+
+// ==================================================================================
 
 Route::get('/', [PageController::class,'index']);
 
@@ -33,6 +37,9 @@ Route::resource('photos', PhotoController::class)->only([
 Route::resource('photos', PhotoController::class)->except([
     'create', 'store', 'update', 'destroy'
    ]);
+
+// ==================================================================================
+   
 Route::get('/world', function () {
     return 'World';
 });
